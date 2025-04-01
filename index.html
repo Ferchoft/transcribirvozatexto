@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voz a Texto | Transcripción Inteligente</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-content">
+                <h1><i class="fas fa-microphone-alt"></i> Voz a Texto Pro</h1>
+                <div class="header-actions">
+                    <button id="darkModeToggle" class="icon-button" aria-label="Cambiar modo oscuro/claro">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="app-description">
+                <p>Transcribe tu voz en tiempo real con comandos inteligentes</p>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div class="recording-controls">
+                <button id="startButton" class="primary-button">
+                    <span class="button-icon"><i class="fas fa-microphone"></i></span>
+                    <span class="button-text">Iniciar Transcripción</span>
+                </button>
+                <div class="status-indicator">
+                    <span id="status" role="status" aria-live="polite">Presiona para comenzar</span>
+                </div>
+            </div>
+
+            <div class="transcription-container">
+                <div class="text-editor">
+                    <textarea id="transcriptionOutput" placeholder="Habla ahora y tu texto aparecerá aquí..." 
+                              aria-label="Texto Transcrito"></textarea>
+                    <div class="word-count">0 palabras</div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="copyButton" class="action-button" title="Copiar Texto">
+                    <i class="fas fa-copy"></i>
+                    <span>Copiar</span>
+                </button>
+                <button id="downloadButton" class="action-button" title="Descargar como .txt">
+                    <i class="fas fa-download"></i>
+                    <span>Descargar</span>
+                </button>
+                <button id="shareButton" class="action-button" title="Compartir Texto">
+                    <i class="fas fa-share-alt"></i>
+                    <span>Compartir</span>
+                </button>
+                <button id="clearButton" class="action-button danger" title="Borrar Todo el Texto">
+                    <i class="fas fa-trash-alt"></i>
+                    <span>Borrar</span>
+                </button>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <div class="voice-commands-info">
+                <h3>Comandos de voz:</h3>
+                <ul>
+                    <li>Di "<strong>salto de línea</strong>" para: <span>↵</span></li>
+                    <li>Di "<strong>coma coma</strong>" para: <span>,</span></li>
+                    <li>Di "<strong>punto punto</strong>" para: <span>.</span></li>
+                </ul>
+            </div>
+            <div class="app-credits">
+                <p>© 2023 Voz a Texto Pro | Transcripción Inteligente</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
